@@ -1,0 +1,10 @@
+# Personal configuration
+.aws/
+.codex/
+.agents/
+.vscode/
+
+# ROS 2 / colcon build output
+build/
+install/
+log/
