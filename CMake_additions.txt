@@ -1,0 +1,16 @@
+# Tài liệu mẫu bổ sung target; file này không được CMakeLists.txt include.
+# Các target bên dưới hiện đã có trong CMakeLists.txt; không cần chép lại.
+# Keep your existing target test_p01, odometry_listener and offboard_control.
+# Add these blocks BEFORE if(BUILD_TESTING) in uav_research/CMakeLists.txt.
+# Eigen must already be declared at the top:
+# find_package(Eigen3 REQUIRED NO_MODULE)
+
+add_executable(test_p01_controller src/test_p01_controller.cpp)
+target_include_directories(test_p01_controller PRIVATE include)
+target_link_libraries(test_p01_controller Eigen3::Eigen)
+install(TARGETS test_p01_controller DESTINATION lib/${PROJECT_NAME})
+
+add_executable(p01_offline_case1 src/p01_offline_case1.cpp)
+target_include_directories(p01_offline_case1 PRIVATE include)
+target_link_libraries(p01_offline_case1 Eigen3::Eigen)
+install(TARGETS p01_offline_case1 DESTINATION lib/${PROJECT_NAME})

@@ -7,12 +7,20 @@
   <maintainer email="vanviet1305@todo.todo">vanviet1305</maintainer>
   <license>TODO: License declaration</license>
 
+  <!-- Công cụ build package ROS 2; các executable được khai báo trong CMakeLists.txt. -->
   <buildtool_depend>ament_cmake</buildtool_depend>
 
+  <!-- API node C++, thông điệp PX4 và kiểu Point cho mục tiêu vị trí. -->
   <depend>rclcpp</depend>
+  <depend>rcl_interfaces</depend>
   <depend>px4_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <build_depend>eigen3_cmake_module</build_depend>
+  <depend>eigen</depend>
 
+  <!-- Dependency phục vụ kiểm tra khi bật BUILD_TESTING. -->
   <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_cmake_test</test_depend>
   <test_depend>ament_lint_common</test_depend>
 
   <export>
